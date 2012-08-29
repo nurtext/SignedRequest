@@ -15,7 +15,7 @@ Simple hash generation and validation using a shared secret.
 	
 	// Set the shared secret, algorithm and delimiter
 	$SecureHash::setSharedSecret('328beab968f0faaec4c6bbd912aba013c929fd01');
-	$SecureHash::SetAlgorithm('sha1');
+	$SecureHash::setAlgorithm('sha1');
 	$SecureHash::setDelimiter('-');
 	
 	
