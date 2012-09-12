@@ -1,6 +1,6 @@
 # SecureHash
 
-Simple hash generation and validation using a shared secret.
+Simple hash generation and validation using a shared secret. Almost like Facebook's "Signed Request" :)
 
 ## Usage example
 
