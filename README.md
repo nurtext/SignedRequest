@@ -36,7 +36,7 @@ var_dump(SignedRequest::verify($signedRequest));
 ### 3. Verifying and parsing a signed request in a single call
 
 ```php
-// Like verifyHashedData() but returns the parsed data
+// Verify and return data if verification succeeds
 var_dump(SignedRequest::parse($signedRequest));
 ```
 
