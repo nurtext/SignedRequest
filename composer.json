@@ -1,0 +1,23 @@
+{
+    "name": "nurtext/signed-request",
+    "description": "Simple encoding/decoding of data and hash validation using a shared secret",
+    "keywords": ["signed", "request", "encoding", "decoding", "validation", "hash", "hmac", "api"],
+    "type": "library",
+    "require": {
+        "php": ">=5.1.2",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "nurtext\\": "src/"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Cedric Kastner",
+            "email": "nurtext@me.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
