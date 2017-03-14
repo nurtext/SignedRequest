@@ -1,47 +1,49 @@
-# SecureHash
+# Signed Request
 
-Simple hash generation and validation using a shared secret. Almost like Facebook's "Signed Request" :)
+Simple encoding/decoding of data and hash validation using a shared secret.
 
-## Usage example
+## Usage
 
 ### 1. Initialization
 
-	<?php
-	// Require class file
-	require_once('libs/SecureHash.class.php');
-	
-	// Get the instance
-	$SecureHash = SecureHash::getInstance();
-	
-	// Set the shared secret, algorithm and delimiter
-	$SecureHash::setSharedSecret('328beab968f0faaec4c6bbd912aba013c929fd01');
-	$SecureHash::setAlgorithm('sha1');
-	$SecureHash::setDelimiter('-');
-	
-	
-### 2. Generating hashed data
+```php
+// Composer autoloader
+require_once 'vendor/autoload.php';
 
-	// Hashe the data and return as string
-	$str = $SecureHash::generateHashedData(array('Hello' => 'World'));
-	
-	// Debug output
-	var_dump($str);
+use nurtext\SignedRequest;
 
+// Set a shared secret
+SignedRequest::setSharedSecret('my shared secret');
+```
 
-### 3. Verifying hashed data
+### 2. Generating a signed request
 
-	// Just verify, don't return the parsed data
-	var_dump($SecureHash::verifyHashedData($str));
-	
-### 3. Parsing hashed data directly
+```php
+// Encode and hash the data
+$signedRequest = SignedRequest::generate(array('hello' => 'world'));
 
-	// Like verifyHashedData() but returns the parsed data
-	var_dump($SecureHash::parseHashedData($str));
-	
-	
+// Debug output
+var_dump($signedRequest);
+```
+
+### 3. Verifying a signed request
+
+```php
+// Just verify, don't return the parsed data
+var_dump(SignedRequest::verify($signedRequest));
+```
+
+### 3. Verifying and parsing a signed request in a single call
+
+```php
+// Like verifyHashedData() but returns the parsed data
+var_dump(SignedRequest::parse($signedRequest));
+```
+
 ## Requirements
 
-- PHP 5.1.2
+- PHP >= 5.1.2
+  - ext-json
 
 ## Additional information
 
