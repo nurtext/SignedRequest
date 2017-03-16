@@ -33,7 +33,7 @@ var_dump($signedRequest);
 var_dump(SignedRequest::verify($signedRequest));
 ```
 
-### 3. Verifying and parsing a signed request in a single call
+### 4. Verifying and parsing a signed request in a single call
 
 ```php
 // Verify and return data if verification succeeds
